@@ -1,7 +1,8 @@
 language: java
 jdk:
 - oraclejdk8
-
+before_deploy:
+- ls ${TRAVIS_BUILD_DIR}/build/distributions/
 
 deploy:
   skip_cleanup: true
