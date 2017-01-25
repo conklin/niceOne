@@ -4,29 +4,36 @@ apply plugin: 'idea'
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
-    }
-}
 
-apply plugin: 'com.github.johnrengelman.shadow'
 
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.14'
     compile 'com.amazonaws:aws-lambda-java-core:1.0.0'
     compile 'com.amazon.alexa:alexa-skills-kit:1.2'
 
+    compile (
+            'com.amazonaws:aws-lambda-java-core:1.1.0',
+            'com.amazonaws:aws-lambda-java-events:1.1.0'
+    )
+
     testCompile 'junit:junit:4.12'
 
 
 }
+
+
+
+task buildZip(type: Zip) {
+    from compileJava
+    from processResources
+    into('lib') {
+        from configurations.runtime
+    }
+}
+
+build.dependsOn buildZip
 
 
 
