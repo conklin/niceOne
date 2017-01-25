@@ -4,6 +4,9 @@ jdk:
 before_deploy:
 - ls ${TRAVIS_BUILD_DIR}
 - ls ${TRAVIS_BUILD_DIR}/build
+- ls ${TRAVIS_BUILD_DIR}/build/tmp
+- ls ${TRAVIS_BUILD_DIR}/build/libs
+- ls ${TRAVIS_BUILD_DIR}/build/classes
 
 
 deploy:
