@@ -9,10 +9,6 @@ before_deploy:
 - rm ${TRAVIS_BUILD_DIR}/build/libs/niceOne.jar
 - cd ${TRAVIS_BUILD_DIR}/build/libs/
 
-before_script:
-- ls ${TRAVIS_BUILD_DIR}/build
-- ls ${TRAVIS_BUILD_DIR}/build/libs
-- cd ${TRAVIS_BUILD_DIR}/build/libs/
 deploy:
   skip_cleanup: true
   provider: lambda
