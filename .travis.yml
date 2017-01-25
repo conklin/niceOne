@@ -3,6 +3,7 @@ jdk:
 - oraclejdk8
 before_deploy:
 - "./gradlew shadowJar"
+- ls ${TRAVIS_BUILD_DIR}
 
 before_script:
 - ls ${TRAVIS_BUILD_DIR}
