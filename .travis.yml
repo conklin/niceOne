@@ -3,12 +3,6 @@ jdk:
 - oraclejdk8
 before_deploy:
 - "./gradlew build"
-- ls ${TRAVIS_BUILD_DIR}
-- ls ${TRAVIS_BUILD_DIR}/build
-- ls ${TRAVIS_BUILD_DIR}/build/tmp
-- ls ${TRAVIS_BUILD_DIR}/build/libs
-- ls ${TRAVIS_BUILD_DIR}/build/classes
-
 
 deploy:
   skip_cleanup: true
