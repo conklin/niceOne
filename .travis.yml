@@ -6,6 +6,7 @@ before_deploy:
 - ls ${TRAVIS_BUILD_DIR}
 - ls ${TRAVIS_BUILD_DIR}/build
 - ls ${TRAVIS_BUILD_DIR}/build/libs
+- rm ${TRAVIS_BUILD_DIR}/build/libs/niceOne.jar
 
 before_script:
 - ls ${TRAVIS_BUILD_DIR}/build
